@@ -11,20 +11,18 @@ vector<combo> ans;
 
 void dfs(int slot, int bal, combo arr) {
     if (slot == N) {
-        // The last element A[N] must satisfy N * A[N] = bal
         if (bal % N == 0) {
             arr[N - 1] = bal / N;
             ans.push_back(arr);
         }
         return;
     }
-    // Try all possible non-negative values for A[slot]
     int val = 0;
     while (bal >= 0) {
         arr[slot - 1] = val;
         dfs(slot + 1, bal, arr);
         val++;
-        bal -= slot; // Each increment of A[slot] reduces bal by slot
+        bal -= slot; 
     }
 }
 int main() {
