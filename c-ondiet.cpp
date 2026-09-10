@@ -18,14 +18,11 @@ void solve() {
 
     ll curr = 0;
     for (int i = 0; i < n; i++) {
-        // Remove the calorie count from m days ago if it was eaten
         if (i >= m) {
             if (eaten[i - m]) {
                 curr -= arr[i - m];
             }
         }
-
-        // Check if eating the snack on day i exceeds K
         if (curr + arr[i] <= k) {
             eaten[i] = true;
             curr += arr[i];
@@ -37,7 +34,6 @@ void solve() {
 }
 
 int main() {
-    // Fast I/O
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
