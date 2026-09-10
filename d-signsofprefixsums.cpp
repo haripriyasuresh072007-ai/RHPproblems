@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<string>
 using namespace std;
 void solve(){
 	int n; string s; cin>>n>>s;
@@ -8,11 +8,14 @@ void solve(){
 	}
 	int ans=-1;
 	if(s.contains("+-")|| s.contains("-+")){
+		if(s.contains("+--+")|| s.contains("-++-")){
 		ans=3;
-	} else{
+		}
+	 else{
 		ans=2;
-	}
+	}}
 	else{
+		ans=1;
 		for(int i=0;i<n;i+=2){
 			if(s[i]=='0'){
 				ans=2;
