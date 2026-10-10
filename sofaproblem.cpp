@@ -61,7 +61,7 @@ int main(){
             int orr = cells[k][2], oc = cells[k][3]; 
             int diffR = orr - pr, diffC = oc - pc;
 
-            // two perpendicular directions
+    
             int perp[2][2] = {{diffC, diffR}, {-diffC, -diffR}};
             for (int p = 0; p < 2; p++) {
                 int newR = pr + perp[p][0], newC = pc + perp[p][1];   
@@ -72,7 +72,7 @@ int main(){
             }
         }
 
-        // Add unvisited states to the queue
+
         for (State &s : nextCell) {
             if (!visited[s.r1][s.c1][s.r2][s.c2]) {
                 visited[s.r1][s.c1][s.r2][s.c2] = true;
@@ -81,6 +81,6 @@ int main(){
         }
     }
 
-    cout << -1 << endl;  // destination can't be reached
+    cout << -1 << endl;  
     return 0;
 }
